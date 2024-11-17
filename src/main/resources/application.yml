@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: accountspayable
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/accounts_db
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+security:
+  user:
+    username: admin
+    password: admin
