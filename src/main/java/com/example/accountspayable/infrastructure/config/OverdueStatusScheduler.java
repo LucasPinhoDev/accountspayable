@@ -18,7 +18,7 @@ public class OverdueStatusScheduler {
 
     @Scheduled(cron = "0 0 0 * * ?")
     public void updateOverdueAccounts() {
-        List<AccountEntity> dueAccounts = accountRepository.findByStatus(AccountStatus.DUE);
+        List<AccountEntity> dueAccounts = accountRepository.findByStatus(AccountStatus.PENDING);
 
         LocalDate today = LocalDate.now();
         for (AccountEntity account : dueAccounts) {
