@@ -1,0 +1,4 @@
+dueDate,paymentDate,value,description,status
+2025-11-01,,500.00,Conta de eletricidade,PENDING
+2025-11-10,2024-11-12,1200.00,Assinatura de Internet,PAID
+2025-12-05,,300.00,Conta de água,PENDING
