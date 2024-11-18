@@ -116,6 +116,7 @@ SPRING_DATASOURCE_PASSWORD=admin
 
 1. Use o endpoint `POST /api/accounts/import` no Postman.
 2. Envie um arquivo CSV com as colunas: `dueDate`, `paymentDate`, `value`, `description`, `status`.
+3. Exemplo de [Arquivo CSV](https://raw.githubusercontent.com/LucasPinhoDev/accountspayable/refs/heads/master/csv_accounts.csv)
 
 ---
 
