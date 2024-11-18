@@ -50,7 +50,7 @@ class AccountServiceTest {
         accountEntity.setPaymentDate(null);
         accountEntity.setValue(new BigDecimal("500.00"));
         accountEntity.setDescription("Conta de eletricidade");
-        accountEntity.setStatus(AccountStatus.DUE);
+        accountEntity.setStatus(AccountStatus.PENDING);
 
         Page<AccountEntity> page = new PageImpl<>(List.of(accountEntity));
         when(accountRepository.findAll(pageable)).thenReturn(page);
@@ -69,7 +69,7 @@ class AccountServiceTest {
         accountEntity.setId(id);
         accountEntity.setDueDate(LocalDate.of(2024, 11, 1));
         accountEntity.setDescription("Conta de eletricidade");
-        accountEntity.setStatus(AccountStatus.DUE);
+        accountEntity.setStatus(AccountStatus.PENDING);
 
         when(accountRepository.findById(id)).thenReturn(Optional.of(accountEntity));
 
@@ -85,7 +85,7 @@ class AccountServiceTest {
                 .dueDate(LocalDate.of(2024, 11, 1))
                 .value(new BigDecimal("500.00"))
                 .description("Conta de eletricidade")
-                .status(AccountStatus.DUE)
+                .status(AccountStatus.PENDING)
                 .build();
 
         AccountEntity accountEntity = new AccountEntity();
@@ -145,7 +145,7 @@ class AccountServiceTest {
         UUID id = UUID.randomUUID();
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setId(id);
-        accountEntity.setStatus(AccountStatus.DUE);
+        accountEntity.setStatus(AccountStatus.PENDING);
 
         when(accountRepository.findById(id)).thenReturn(Optional.of(accountEntity));
         when(accountRepository.save(accountEntity)).thenReturn(accountEntity);
@@ -164,7 +164,7 @@ class AccountServiceTest {
                 .dueDate(LocalDate.of(2024, 11, 1))
                 .value(new BigDecimal("500.00"))
                 .description("Conta de eletricidade")
-                .status(AccountStatus.DUE)
+                .status(AccountStatus.PENDING)
                 .build();
 
         when(csvAccountImporter.importFromCsv(file)).thenReturn(List.of(accountRequestDTO));

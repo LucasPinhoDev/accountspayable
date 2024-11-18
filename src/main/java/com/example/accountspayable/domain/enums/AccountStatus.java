@@ -1,7 +1,7 @@
 package com.example.accountspayable.domain.enums;
 
 public enum AccountStatus {
-    DUE,
+    PENDING,
     OVERDUE,
     PAID
 }

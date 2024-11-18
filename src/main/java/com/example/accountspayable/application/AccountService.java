@@ -70,7 +70,13 @@ public class AccountService {
     public AccountResponseDTO updateAccountStatus(UUID id, AccountStatus status) {
         AccountEntity accountEntity = accountRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
+
         accountEntity.setStatus(status);
+
+        if (status == AccountStatus.PAID) {
+            accountEntity.setPaymentDate(LocalDate.now());
+        }
+
         AccountEntity updatedEntity = accountRepository.save(accountEntity);
         return mapToResponseDTO(updatedEntity);
     }
