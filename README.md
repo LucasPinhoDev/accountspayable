@@ -14,7 +14,7 @@ O desafio consistiu em desenvolver uma API REST para gerenciar um sistema de con
 ## Funcionalidades
 
 - **CRUD de Contas a Pagar**: Criação, leitura, atualização e exclusão de contas.
-- **Alteração de Status**: Possibilidade de alterar o status de uma conta para "A Vencer", "Vencida" ou "Paga".
+- **Alteração de Status**: Possibilidade de alterar o status de uma conta para "Pendente", "Vencida" ou "Paga".
 - **Consulta Filtrada**: Buscar contas por data de vencimento e descrição.
 - **Cálculo de Total Pago**: Obter o valor total pago em um período específico.
 - **Importação de Contas via CSV**: Importar contas em massa a partir de um arquivo CSV.
